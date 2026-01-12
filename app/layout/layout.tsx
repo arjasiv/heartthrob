@@ -10,6 +10,7 @@ export default function Layout() {
       <div className={styles.layout}>
         <Outlet />
       </div>
+      <p className={styles.signature}>Website by Arja</p>
     </>
   );
 }

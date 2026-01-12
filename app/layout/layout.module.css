@@ -49,3 +49,12 @@
     padding-top: 68px;
   }
 }
+
+.signature {
+  position: absolute;
+  font-size: 12px;
+  color: rgb(223, 206, 206);
+  bottom: 0;
+  margin-left: 8px;
+  margin-bottom: 4px;
+}
