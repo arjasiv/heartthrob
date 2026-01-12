@@ -1,0 +1,10 @@
+.title {
+  letter-spacing: 0.15rem;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.form {
+  width: 100%;
+  align-items: center;
+}

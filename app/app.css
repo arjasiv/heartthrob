@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Simple Diary";
+  src: url("/fonts/Simple Diary.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Notevela";
+  src: url("/fonts/Notevela.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kinkee";
+  src: url("/fonts/KINKEE__.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Architects Daughter";
+  src: url("/fonts/ArchitectsDaughter-Regular.ttf") format("truetype"),
+    url("/fonts/ArchitectsDaughter-Regular.woff2") format("woff2"),
+    url("/fonts/ArchitectsDaughter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Notevela", cursive, sans-serif;
+  /*background-color: rgb(255 212 209);*/
+  background-color: rgb(255 255 255);
+  color: rgb(204 79 100);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+@media (max-width: 490px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  font-size: 1.5rem;
+  border-radius: 12px;
+  border: 3px solid black;
+}
