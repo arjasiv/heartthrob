@@ -7,6 +7,10 @@ import { useProfiles } from "~/context/ProfileProvider";
 import type { Profile } from "~/customTypes/Profile";
 import { Rounds } from "~/enums/Rounds.enum";
 import { traits } from "~/data/traits";
+import styles from "./Traits.module.css";
+import { rounds } from "~/data/rounds";
+
+import type { Traits } from "~/customTypes/Traits";
 
 function generateUniquePositionLists(
   arrayCount: number, // how many arrays you want
@@ -32,12 +36,19 @@ function generateUniquePositionLists(
 }
 export default function Traits({ actionData }: Route.ComponentProps) {
   const [cont, setCont] = useState<boolean>(false);
-  const { profiles, setProfiles } = useProfiles();
+  const { profiles, setProfiles, traits, setTraits } = useProfiles();
 
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setActiveFieldset(activeFieldset + 1);
+
+    const formData = new FormData(e.currentTarget);
+
+    const traitsInput = formData.getAll(rounds[activeFieldset]);
+    console.log("handling submit");
 
     if (!profiles) return;
 
@@ -46,31 +57,56 @@ export default function Traits({ actionData }: Route.ComponentProps) {
       profiles.length - 1
     );
 
+    const updatedTraits = {
+      ...traits,
+      [rounds[activeFieldset]]: Array.from(traitsInput),
+    } as Traits;
+
+    setTraits(updatedTraits);
+
+    if (activeFieldset < 3 || !traits) return;
+
     setProfiles(
       profiles.map((profile, index) => ({
         ...profile,
         [Rounds.Personality]:
-          traits[Rounds.Personality][randomValues[index][0]],
+          updatedTraits[Rounds.Personality][randomValues[index][0]],
         [Rounds.HobbiesHabits]:
-          traits[Rounds.HobbiesHabits][randomValues[index][1]],
-        [Rounds.RedFlags]: traits[Rounds.RedFlags][randomValues[index][2]],
+          updatedTraits[Rounds.HobbiesHabits][randomValues[index][1]],
+        [Rounds.RedFlags]:
+          updatedTraits[Rounds.RedFlags][randomValues[index][2]],
         [Rounds.Aspirations]:
-          traits[Rounds.Aspirations][randomValues[index][3]],
+          updatedTraits[Rounds.Aspirations][randomValues[index][3]],
       }))
     );
+
     navigate("/game/1");
 
     return;
   };
 
+  const [activeFieldset, setActiveFieldset] = useState<number>(0);
+
+  const registerTraits = () => {};
+
   return (
     <>
-      <h1>Traits</h1>
-      <Form onSubmit={handleSubmit} method="post">
-        <input type="text" name="trait1" />
-        <input type="text" name="trait2" />
-        <input type="text" name="trait3" />
-        <button type="submit">Continue</button>
+      <h2>Traits</h2>
+      <Form className={styles.form} onSubmit={handleSubmit} method="post">
+        <fieldset className={styles.inputWrapper}>
+          <label htmlFor={rounds[activeFieldset]}>
+            {rounds[activeFieldset]}
+          </label>
+          {profiles?.map((profile, index) => (
+            <input
+              key={rounds[activeFieldset] + index}
+              type="text"
+              id={rounds[activeFieldset] + index}
+              name={rounds[activeFieldset]}
+            />
+          ))}
+          <button type="submit">Continue</button>
+        </fieldset>
       </Form>
     </>
   );

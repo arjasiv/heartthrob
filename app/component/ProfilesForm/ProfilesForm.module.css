@@ -1,18 +1,54 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
-  width: 100%;
-  margin-bottom: 16px;
+  width: calc(100% - 240px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1020px) {
+  .container {
+    width: 100%;
+    gap: 1rem;
+  }
+}
+
+.containerWrapper {
+  display: flex;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: 0.15rem;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .form {
   width: 100%;
   text-align-last: center;
+}
+
+.addButton {
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  left: calc(100% - 60px);
+  top: calc(100% - 60px);
+  font-size: 1.5rem;
+  border: 2px solid rgb(190 58 102);
+  background-color: rgb(255 232 232);
+  color: rgb(190 58 102);
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(255 210 210);
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(204 79 100);
+  }
 }

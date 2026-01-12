@@ -3,11 +3,10 @@
 }
 
 .traits p {
-  font-size: 1.35rem;
+  font-size: 1rem;
 }
 
 .traits div {
-  margin-bottom: 8px;
   width: 100%;
   align-self: center;
   color: rgb(190 58 102);
@@ -36,20 +35,24 @@
   touch-action: manipulation;
 }
 
+.traits :not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .profile h3 {
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   text-align: center;
   color: rgb(67 62 75);
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 .imgWrapper {
-  max-height: 370px;
+  max-height: 330px;
   aspect-ratio: 3 / 4;
   margin-bottom: 12px;
   img {
     display: flex;
-    width: 100%;
+    width: 200px;
     height: 100%;
     object-fit: cover;
   }
@@ -57,9 +60,13 @@
 
 .profile {
   justify-items: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 1020px) {
+  .profile {
+    width: 100%;
+  }
   .profile h3 {
     font-size: 1.3rem;
     letter-spacing: 0.2rem;
@@ -67,12 +74,10 @@
   .traits {
     padding-right: 8px;
   }
-  .traits p {
-    font-size: 1.1rem;
-  }
 
   .traits div {
-    font-size: 1.1rem;
+    width: 100%;
+    font-size: 0.5rem;
     padding: 6px;
   }
 
@@ -83,6 +88,6 @@
 
 @media (max-width: 390px) {
   .imgWrapper {
-    max-height: 180px;
+    max-height: 330px;
   }
 }

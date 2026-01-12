@@ -104,8 +104,9 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
   // }, []);
 
   const { profiles, setProfiles } = useProfiles();
-
-  const timesToRender = new Array(5).fill(null);
+  const [numberOfProfiles, setNumberOfProfiles] = useState<number>(
+    profiles?.length || 5
+  );
 
   const navigate = useNavigate();
 
@@ -139,20 +140,21 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
     <>
       <h2 className={styles.title}>The contenders</h2>
       <Form className={styles.form} onSubmit={handleSubmit} method="post">
-        <div className={styles.container}>
-          {profiles ? (
-            profiles?.map((profile, index) => (
-              <ProfileCardForm key={index} round={round} profile={profile} />
-            ))
-          ) : (
-            <>
-              <ProfileCardForm key={0} round={round} />
-              <ProfileCardForm key={1} round={round} />
-              <ProfileCardForm key={2} round={round} />
-              <ProfileCardForm key={3} round={round} />
-              <ProfileCardForm key={4} round={round} />
-            </>
-          )}
+        <div className={styles.containerWrapper}>
+          <div className={styles.container}>
+            {Array(numberOfProfiles)
+              .fill(null)
+              .map((_, index) => (
+                <ProfileCardForm key={index} round={round} profile={null} />
+              ))}
+          </div>
+          <button
+            className={styles.addButton}
+            type="button"
+            onClick={() => setNumberOfProfiles((prev) => prev + 1)}
+          >
+            +
+          </button>
         </div>
         <button type="submit">Continue</button>
       </Form>

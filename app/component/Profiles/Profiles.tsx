@@ -11,7 +11,6 @@ type ProfileProps = {
 const Profiles = ({ round }: ProfileProps) => {
   const { profiles, setProfiles } = useProfiles();
 
-  console.log("profiles: ", profiles);
   return (
     <div className={styles.container}>
       {profiles?.map((profile, index) => (

@@ -6,7 +6,7 @@ type Props = {};
 const RoundDescription = (props: Props) => {
   return (
     <div className={styles.container}>
-      <p>Question: Who would you ask to the school dance?</p>
+      <h2>Question: Who would you ask to the school dance?</h2>
     </div>
   );
 };

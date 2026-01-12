@@ -18,18 +18,16 @@ const ProfileCard = ({ round, profile }: ProfileProps) => {
     return;
   }
 
-  console.log(profile.displayPicture);
-
   return (
     <div className={styles.profile}>
-      <h3 className={styles.name}>{profile.name}</h3>
+      <h3 className={styles.name}>{profile.name || "Random person"}</h3>
       {profile.displayPicture ? (
         <div className={styles.imgWrapper}>
           <img className={styles.img} src={profile.displayPicture}></img>
         </div>
       ) : (
         <div className={styles.imgWrapper}>
-          Oops, you forgot to upload a photo
+          <img className={styles.img} src={""}></img>
         </div>
       )}
 
