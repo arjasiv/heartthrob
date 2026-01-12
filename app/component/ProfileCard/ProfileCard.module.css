@@ -47,14 +47,15 @@
 }
 
 .imgWrapper {
-  max-height: 330px;
   aspect-ratio: 3 / 4;
   margin-bottom: 12px;
+  width: 100%;
   img {
     display: flex;
     width: 200px;
     height: 100%;
     object-fit: cover;
+    margin: 0 auto;
   }
 }
 
@@ -71,9 +72,6 @@
     font-size: 1.3rem;
     letter-spacing: 0.2rem;
   }
-  .traits {
-    padding-right: 8px;
-  }
 
   .traits div {
     width: 100%;
@@ -82,7 +80,7 @@
   }
 
   .imgWrapper {
-    max-height: 150px;
+    max-height: 220px;
   }
 }
 
