@@ -1,13 +1,9 @@
-import ImageUpload from "@component/ImageUpload/ImageUpload";
-import ProfilesForm from "@component/ProfilesForm/ProfilesForm";
 import { useState } from "react";
-import { Form, Link, useNavigate } from "react-router";
+import { Form, useNavigate } from "react-router";
 import type { Route } from "./+types/create";
 import { useProfiles } from "~/context/ProfileProvider";
-import type { Profile } from "~/customTypes/Profile";
 import { Rounds } from "~/enums/Rounds.enum";
-import { traits } from "~/data/traits";
-import styles from "./Traits.module.css";
+import styles from "../styles/Traits.module.css";
 import { rounds } from "~/data/rounds";
 
 import type { Traits } from "~/customTypes/Traits";
