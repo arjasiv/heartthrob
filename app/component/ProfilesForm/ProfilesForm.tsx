@@ -145,7 +145,7 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
             {Array(numberOfProfiles)
               .fill(null)
               .map((_, index) => (
-                <ProfileCardForm key={index} round={round} profile={null} />
+                <ProfileCardForm key={index} round={round} profile={profiles?.[index] || null} />
               ))}
           </div>
           <button
