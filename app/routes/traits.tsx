@@ -3,7 +3,7 @@ import { Form, useNavigate } from "react-router";
 import type { Route } from "./+types/create";
 import { useProfiles } from "~/context/ProfileProvider";
 import { Rounds } from "~/enums/Rounds.enum";
-import styles from "../styles/Traits.module.css";
+import styles from "~/styles/Traits.module.css";
 import { rounds } from "~/data/rounds";
 
 import type { Traits } from "~/customTypes/Traits";
