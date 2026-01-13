@@ -130,8 +130,6 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
           : profiles?.[index]?.displayPicture || null,
     }));
 
-    console.log("Updated Profiles:", updatedProfiles);
-
     setProfiles(updatedProfiles as Profile[]);
 
     navigate("/create/traits?step=1");

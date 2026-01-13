@@ -148,10 +148,5 @@ h2 {
 }
 
 input:focus {
-  outline: none;
   outline: 1px solid rgb(170, 113, 132);
-}
-
-input {
-  border-radius: 8px;
 }

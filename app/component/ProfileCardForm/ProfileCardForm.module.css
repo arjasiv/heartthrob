@@ -67,11 +67,11 @@
 }
 
 .profile input {
-  border: 1px solid rgb(128, 98, 103);
+  border-radius: 8px;
+  border: 2px solid rgb(170, 113, 132);
 
   &:focus {
-    border: 1px solid rgb(204 79 100);
-    outline: 1px solid rgb(204 79 100);
+    border: 2px solid rgb(204 79 100);
   }
 }
 
