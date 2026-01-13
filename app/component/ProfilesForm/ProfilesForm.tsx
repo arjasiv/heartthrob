@@ -133,7 +133,7 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
 
     setProfiles(updatedProfiles as Profile[]);
 
-    navigate("/create/traits");
+    navigate("/create/traits?step=1");
   };
 
   return (
@@ -145,7 +145,11 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
             {Array(numberOfProfiles)
               .fill(null)
               .map((_, index) => (
-                <ProfileCardForm key={index} round={round} profile={profiles?.[index] || null} />
+                <ProfileCardForm
+                  key={index}
+                  round={round}
+                  profile={profiles?.[index] || null}
+                />
               ))}
           </div>
           <button
