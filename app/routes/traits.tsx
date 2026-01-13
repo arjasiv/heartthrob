@@ -93,8 +93,6 @@ export default function Traits({ actionData }: Route.ComponentProps) {
   const populateWithExampleTraits = (
     e: React.MouseEvent<HTMLButtonElement>
   ) => {
-    setTraits({} as Traits);
-
     mouseclick();
 
     const updatedTraits = {
@@ -112,14 +110,13 @@ export default function Traits({ actionData }: Route.ComponentProps) {
     const sample2 = sampleTraits2[currentRound];
     const sample3 = sampleTraits3[currentRound];
 
-    const mixedTraits = sample1.map((_, index) => {
-      const rand = Math.random();
-      if (rand < 0.33) return sample1[index];
-      if (rand < 0.66) return sample2[index];
-      return sample3[index];
-    });
+    const profileCount = profiles?.length || 5;
 
-    return mixedTraits;
+    // Combine all traits and shuffle
+    const allTraits = [...sample1, ...sample2, ...sample3];
+    const shuffled = [...allTraits].sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0, profileCount);
   };
 
   const handleAutofillAndSubmit = () => {
@@ -167,7 +164,7 @@ export default function Traits({ actionData }: Route.ComponentProps) {
           </label>
           {profiles?.map((profile, index) => (
             <input
-              key={traits?.[rounds[activeFieldset]]?.[index] || "" + index}
+              key={`${rounds[activeFieldset]}-${index}-${traits?.[rounds[activeFieldset]]?.[index] || ""}`}
               type="text"
               id={rounds[activeFieldset] + index}
               name={rounds[activeFieldset]}
