@@ -23,15 +23,16 @@
 
   input {
     padding: 6px;
-    border: 2px solid rgb(190 58 102);
-    background-color: rgb(255 232 232);
-    color: rgb(190 58 102);
+    border: 2px solid rgb(128, 98, 103);
+    color: rgb(128, 98, 103);
     border-radius: 10px;
     box-shadow: none;
+    background-color: rgb(246, 235, 237);
 
     &:focus {
-      outline: none;
-      border: 2px solid rgb(204 79 100);
+      border: 2px solid rgb(128, 98, 103);
+      background-color: rgb(241, 221, 230);
+      outline: 1px solid rgb(128, 98, 103);
     }
   }
 }

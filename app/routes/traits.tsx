@@ -7,7 +7,7 @@ import styles from "~/styles/Traits.module.css";
 import { rounds } from "~/data/rounds";
 
 // @ts-ignore - sounds.js doesn't have type definitions
-import { mouseclick, keyboardclick } from "~/utils/sounds";
+import { mouseclick, keyboardclick, nextSound } from "~/utils/sounds";
 
 import type { Traits } from "~/customTypes/Traits";
 
@@ -44,7 +44,11 @@ export default function Traits({ actionData }: Route.ComponentProps) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    mouseclick();
+    if (activeFieldset == 3) {
+      nextSound();
+    } else {
+      mouseclick();
+    }
 
     const formData = new FormData(e.currentTarget);
 
@@ -105,7 +109,9 @@ export default function Traits({ actionData }: Route.ComponentProps) {
               onChange={keyboardclick}
             />
           ))}
-          <button type="submit">Continue</button>
+          <button type="submit">
+            {activeFieldset === 3 ? "Start game" : "Continue"}
+          </button>
         </fieldset>
       </Form>
     </>

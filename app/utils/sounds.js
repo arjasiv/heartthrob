@@ -22,3 +22,15 @@ export const woodClick = () => {
   audio.src = "https://cdn.freesound.org/previews/500/500927_7923682-lq.mp3";
   audio.play();
 };
+
+export const nextSound = () => {
+  const audio = new Audio();
+  audio.src = "https://cdn.freesound.org/previews/253/253177_4404552-lq.mp3";
+  audio.play();
+};
+
+export const completeSound = () => {
+  const audio = new Audio();
+  audio.src = "https://cdn.freesound.org/previews/345/345299_6212127-lq.mp3";
+  audio.play();
+};

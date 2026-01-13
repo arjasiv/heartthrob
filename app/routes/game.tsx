@@ -6,7 +6,7 @@ import { rounds } from "~/data/rounds";
 import { useProfiles } from "~/context/ProfileProvider";
 
 // @ts-ignore - sounds.js doesn't have type definitions
-import { mouseclick } from "~/utils/sounds";
+import { nextSound, completeSound } from "~/utils/sounds";
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
   if (params.round && (Number(params.round) < 1 || Number(params.round) > 4)) {
@@ -28,7 +28,9 @@ export default function Game({ loaderData, actionData }: Route.ComponentProps) {
       {(loaderData < 4 || !loaderData) && (
         <button
           onClick={() => {
-            mouseclick();
+            {
+              loaderData < 3 ? nextSound() : completeSound();
+            }
             navigate(`/game/${loaderData ? loaderData + 1 : 1}`, {});
           }}
         >

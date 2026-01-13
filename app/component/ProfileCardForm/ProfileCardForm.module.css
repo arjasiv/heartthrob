@@ -66,6 +66,15 @@
   white-space: nowrap;
 }
 
+.profile input {
+  border: 1px solid rgb(128, 98, 103);
+
+  &:focus {
+    border: 1px solid rgb(204 79 100);
+    outline: 1px solid rgb(204 79 100);
+  }
+}
+
 @media (max-width: 1020px) {
   .profile input {
     font-size: 1.7rem;
