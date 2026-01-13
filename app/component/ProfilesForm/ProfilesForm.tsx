@@ -9,7 +9,7 @@ import { Form, useNavigate } from "react-router";
 import type { Route } from "../../routes/+types/create";
 import { useProfiles } from "~/context/ProfileProvider";
 // @ts-ignore - sounds.js doesn't have type definitions
-import { mouseclick } from "~/utils/sounds";
+import { mouseclick, woodClick } from "~/utils/sounds";
 
 type ProfileProps = {
   round: number;
@@ -156,7 +156,10 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
           <button
             className={styles.addButton}
             type="button"
-            onClick={() => setNumberOfProfiles((prev) => prev + 1)}
+            onClick={() => {
+              woodClick();
+              setNumberOfProfiles((prev) => prev + 1);
+            }}
           >
             +
           </button>

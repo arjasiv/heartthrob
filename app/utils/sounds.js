@@ -10,3 +10,15 @@ export const keyboardclick = () => {
   audio.src = "https://cdn.freesound.org/previews/679/679319_14220036-lq.mp3";
   audio.play();
 };
+
+export const dropSound = () => {
+  const audio = new Audio();
+  audio.src = "https://cdn.freesound.org/previews/431/431671_2222557-lq.mp3";
+  audio.play();
+};
+
+export const woodClick = () => {
+  const audio = new Audio();
+  audio.src = "https://cdn.freesound.org/previews/500/500927_7923682-lq.mp3";
+  audio.play();
+};

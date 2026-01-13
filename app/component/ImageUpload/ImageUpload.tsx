@@ -1,5 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
+// @ts-ignore - sounds.js doesn't have type definitions
+import { dropSound } from "~/utils/sounds";
 
 function ImageUpload({ previewProp }: { previewProp?: string | null }) {
   const [preview, setPreview] = useState<string | null>(previewProp || null);
@@ -8,6 +10,7 @@ function ImageUpload({ previewProp }: { previewProp?: string | null }) {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length > 0) {
+      dropSound();
       const file = acceptedFiles[0];
       const url = URL.createObjectURL(file);
       setPreview(url);
