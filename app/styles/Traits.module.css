@@ -28,6 +28,10 @@
     margin: 0;
   }
 
+  .submitBtn {
+    margin-left: auto;
+  }
+
   .autofillBtn {
     margin-top: 36px;
   }
