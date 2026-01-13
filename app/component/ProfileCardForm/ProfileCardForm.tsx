@@ -1,10 +1,9 @@
-import { traits } from "~/data/traits";
 import styles from "./ProfileCardForm.module.css";
-import { Rounds } from "~/enums/Rounds.enum";
 import type { Route } from "../../routes/+types/game";
 import type { Profile } from "~/customTypes/Profile";
 import ImageUpload from "@component/ImageUpload/ImageUpload";
-import { Form } from "react-router";
+// @ts-ignore - sounds.js doesn't have type definitions
+import { keyboardclick } from "~/utils/sounds";
 
 type ProfileProps = {
   round: number;
@@ -21,6 +20,7 @@ const ProfileCardForm = ({ round, profile }: ProfileProps) => {
       <label>
         Name:
         <input
+          onChange={keyboardclick}
           className={styles.name}
           type="text"
           name="name"

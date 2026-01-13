@@ -6,6 +6,9 @@ import { Rounds } from "~/enums/Rounds.enum";
 import styles from "~/styles/Traits.module.css";
 import { rounds } from "~/data/rounds";
 
+// @ts-ignore - sounds.js doesn't have type definitions
+import { mouseclick, keyboardclick } from "~/utils/sounds";
+
 import type { Traits } from "~/customTypes/Traits";
 
 function generateUniquePositionLists(
@@ -40,6 +43,8 @@ export default function Traits({ actionData }: Route.ComponentProps) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    mouseclick();
 
     const formData = new FormData(e.currentTarget);
 
@@ -97,6 +102,7 @@ export default function Traits({ actionData }: Route.ComponentProps) {
               id={rounds[activeFieldset] + index}
               name={rounds[activeFieldset]}
               defaultValue={traits?.[rounds[activeFieldset]]?.[index] || ""}
+              onChange={keyboardclick}
             />
           ))}
           <button type="submit">Continue</button>

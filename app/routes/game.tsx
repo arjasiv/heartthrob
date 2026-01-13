@@ -4,8 +4,9 @@ import type { Route } from "./+types/game";
 import { redirect, useNavigate } from "react-router";
 import { rounds } from "~/data/rounds";
 import { useProfiles } from "~/context/ProfileProvider";
-import { Rounds } from "~/enums/Rounds.enum";
-import { traits } from "~/data/traits";
+
+// @ts-ignore - sounds.js doesn't have type definitions
+import { mouseclick } from "~/utils/sounds";
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
   if (params.round && (Number(params.round) < 1 || Number(params.round) > 4)) {
@@ -18,11 +19,6 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
 export default function Game({ loaderData, actionData }: Route.ComponentProps) {
   const navigate = useNavigate();
   const { profiles } = useProfiles();
-  console.log("Profiles in game");
-
-  if (profiles) {
-    console.log(profiles);
-  }
 
   return (
     <>
@@ -32,6 +28,7 @@ export default function Game({ loaderData, actionData }: Route.ComponentProps) {
       {(loaderData < 4 || !loaderData) && (
         <button
           onClick={() => {
+            mouseclick();
             navigate(`/game/${loaderData ? loaderData + 1 : 1}`, {});
           }}
         >

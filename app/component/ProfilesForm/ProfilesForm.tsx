@@ -8,6 +8,8 @@ import ProfileCardForm from "@component/ProfileCardForm/ProfileCardForm";
 import { Form, useNavigate } from "react-router";
 import type { Route } from "../../routes/+types/create";
 import { useProfiles } from "~/context/ProfileProvider";
+// @ts-ignore - sounds.js doesn't have type definitions
+import { mouseclick } from "~/utils/sounds";
 
 type ProfileProps = {
   round: number;
@@ -112,14 +114,13 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    mouseclick();
     // Process form data here if needed
     const formData = new FormData(e.currentTarget);
 
     const names = formData.getAll("name");
     const pics = formData.getAll("pic") as File[];
-
-    console.log(pics[0]);
-    console.log(profiles?.[0].displayPicture);
 
     const updatedProfiles = names.map((name, index) => ({
       name: name.toString(),
