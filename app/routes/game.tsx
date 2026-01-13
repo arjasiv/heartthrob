@@ -26,7 +26,7 @@ export default function Game({ loaderData, actionData }: Route.ComponentProps) {
 
   return (
     <>
-      <RoundDescription></RoundDescription>
+      <RoundDescription round={loaderData}></RoundDescription>
       <Profiles round={loaderData}></Profiles>
 
       {(loaderData < 4 || !loaderData) && (
