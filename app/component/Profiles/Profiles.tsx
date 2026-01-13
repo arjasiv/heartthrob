@@ -1,6 +1,4 @@
 import styles from "./Profiles.module.css";
-import { traits } from "~/data/traits";
-import { Rounds } from "~/enums/Rounds.enum";
 import ProfileCard from "@component/ProfileCard/ProfileCard";
 import { useProfiles } from "~/context/ProfileProvider";
 

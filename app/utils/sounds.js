@@ -1,3 +1,5 @@
+import { isMobile } from "react-device-detect";
+
 export const mouseclick = () => {
   const audio = new Audio();
   audio.src =
@@ -6,6 +8,7 @@ export const mouseclick = () => {
 };
 
 export const keyboardclick = () => {
+  if (isMobile) return;
   const audio = new Audio();
   audio.src = "https://cdn.freesound.org/previews/679/679319_14220036-lq.mp3";
   audio.play();

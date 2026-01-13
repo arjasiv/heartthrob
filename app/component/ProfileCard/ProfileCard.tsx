@@ -1,4 +1,3 @@
-import { traits } from "~/data/traits";
 import styles from "./ProfileCard.module.css";
 import { Rounds } from "~/enums/Rounds.enum";
 import type { Route } from "../../routes/+types/game";
@@ -27,7 +26,7 @@ const ProfileCard = ({ round, profile }: ProfileProps) => {
         </div>
       ) : (
         <div className={styles.imgWrapper}>
-          <img className={styles.img} src={""}></img>
+          <img className={styles.img} src={undefined}></img>
         </div>
       )}
 

@@ -1,8 +1,5 @@
 import styles from "./ProfilesForm.module.css";
-import { traits } from "~/data/traits";
-import { Rounds } from "~/enums/Rounds.enum";
-import { useEffect, useState } from "react";
-import ProfileCard from "@component/ProfileCard/ProfileCard";
+import { useState } from "react";
 import type { Profile } from "~/customTypes/Profile";
 import ProfileCardForm from "@component/ProfileCardForm/ProfileCardForm";
 import { Form, useNavigate } from "react-router";

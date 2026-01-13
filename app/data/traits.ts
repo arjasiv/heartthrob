@@ -1,33 +1,99 @@
 import { Rounds } from "../enums/Rounds.enum";
 
-export const traits = {
+export const sampleTraits = {
   [Rounds.Personality]: [
-    "Online therapist",
-    "Motivational Speaker",
-    "History teacher",
+    "Recently divorced",
+    "Motivational speaker",
+    "Music teacher",
     "Tiktok musician",
-    "Disney adult ",
+    "Disney adult",
   ],
   [Rounds.HobbiesHabits]: [
-    "DJ-ing",
+    "DJs at weddings",
     "Hobby horsing",
     "Guild leader in WoW",
     "Football",
     "Tarot card reader",
   ],
   [Rounds.RedFlags]: [
-    "Lets AI write all their speeches",
-    "Has a finsta for their dog.",
+    "Refuses to go to therapy",
+    "Has a finsta for their dog",
     "Participates enthusiatically in beef and blowjob",
-    "Says “rizz” then immediately loses it.",
+    "Is best-friends with their ex",
     "Will only eat their dinner while watching asian mukbangers",
   ],
   [Rounds.Aspirations]: [
-    "Wants to get rich creating an app but doesn't know how to code",
-    "Plans to come out as an anti-vaxxer one day",
-    "Is training to become a participant on drag race",
+    "Wants to get rich creating an app, but doesn't know how to code",
+    "Is about to be a contestant on Big Brother",
+    "Wants to adopt 5 dogs",
     "Biggest dream is to go to Disney World",
     "Wants to grow their hair long enough to get dreads",
-    "Dreams of finding someone to run a multiracial couples youtube account with",
+    "Plans to attend as many techno festivals as possible before they turn 40",
+  ],
+};
+
+export const sampleTraits2 = {
+  [Rounds.Personality]: [
+    "Horsegirl",
+    "Self-help guru",
+    "Devil's advocate",
+    "Police officer",
+    "Soundcloud rapper",
+  ],
+  [Rounds.HobbiesHabits]: [
+    "Day-trades crypto",
+    "Collects moths and other dead critters",
+    "Addicted to Duolingo",
+    "River dancing",
+    "Primal play",
+  ],
+  [Rounds.RedFlags]: [
+    "Flirts with the waitress every time you go out",
+    "Shares ice cream with their dog",
+    "Wants you to convert to mormonism",
+    "Thinks landlords are misunderstood",
+    "Walks and talks in their sleep and it's creepy",
+  ],
+  [Rounds.Aspirations]: [
+    "Believes they are one good idea away from blowing up",
+    "Wants to make a living creating AI-slop artworks",
+    "Lives in a van and wants you to join them to travel the world",
+    "Is writing a book about dating as an empath in a narcissistic world",
+    "Wants to travel to India to become a yoga instructor",
+    "Is about to open a business that will underpay its workers",
+    "Plans to unschool their future kids",
+  ],
+};
+
+export const sampleTraits3 = {
+  [Rounds.Personality]: [
+    "Investment banker",
+    "College professor",
+    "Environmental activist",
+    "Hell's Angel",
+    "Nepo baby",
+  ],
+  [Rounds.HobbiesHabits]: [
+    "Gymbro",
+    "Romantacy fanatic",
+    "Knitting",
+    "Super into guns",
+    "Puppeteering",
+  ],
+  [Rounds.RedFlags]: [
+    "Never apologizes",
+    "Hell's Angel member",
+    "Calls you 'mommy' in public",
+    "Trauma dumps on the second date",
+    "Moans after finishing each sentence",
+  ],
+  [Rounds.Aspirations]: [
+    "Is trying to become a member of Hell's Angels",
+    "Wants you to become family vloggers together",
+    "Lives in a van and wants you to join them to travel the world",
+    "Is writing a book about dating as an empath in a narcissistic world",
+    "Wants to travel to India to become a yoga instructor",
+    "Is about to open a business that will underpay its workers",
+    "Wants you to quit your job and join their startup",
   ],
 };
