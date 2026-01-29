@@ -52,6 +52,7 @@
 
 .rulesButton {
   position: fixed;
+  z-index: 1;
   width: 42px;
   height: 42px;
   bottom: 0;
