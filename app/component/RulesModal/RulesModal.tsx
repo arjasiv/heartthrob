@@ -1,6 +1,6 @@
 import styles from "./RulesModal.module.css";
 // @ts-ignore - sounds.js doesn't have type definitions
-import { woodClick } from "~/utils/sounds";
+import { mouseclick } from "~/utils/sounds";
 
 type RulesModalProps = {
   onClick: () => void;
@@ -14,7 +14,7 @@ const RulesModal = ({ onClick }: RulesModalProps) => {
         <button
           className={styles.closeBtn}
           onClick={() => {
-            woodClick();
+            mouseclick();
             onClick();
           }}
         >
