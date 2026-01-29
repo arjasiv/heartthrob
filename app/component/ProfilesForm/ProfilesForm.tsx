@@ -148,6 +148,7 @@ const ProfilesForm = ({ round, name }: ProfileProps) => {
                 />
               ))}
           </div>
+
           <button
             className={styles.addButton}
             type="button"

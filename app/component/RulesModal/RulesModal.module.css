@@ -1,0 +1,46 @@
+.container {
+  background-color: hsl(0, 24%, 10%, 0.7);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 1;
+}
+.modal {
+  color: rgb(190 58 102);
+  padding: 38px;
+  background-color: #ffd1d1;
+  border: 3px dashed rgb(190 58 102);
+  position: absolute;
+  top: calc(100vh / 2 - 300px);
+  left: calc(100vw / 2 - 300px);
+  z-index: 2;
+  width: 600px;
+  height: 600px;
+  font-size: 18px;
+}
+
+.closeBtn {
+  position: absolute;
+  padding: 12px 8px;
+  top: 6px;
+  right: 6px;
+  font-size: 1.2rem;
+  border: 2px solid rgb(190 58 102);
+  background-color: rgb(255 232 232);
+  color: rgb(190 58 102);
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+  margin: 0;
+  line-height: 0;
+
+  &:hover {
+    background-color: rgb(225, 165, 165);
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(204 79 100);
+  }
+}

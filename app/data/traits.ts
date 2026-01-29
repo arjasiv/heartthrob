@@ -24,7 +24,6 @@ export const sampleTraits = {
   [Rounds.RedFlags]: [
     "Refuses to go to therapy",
     "Has a finsta for their dog",
-    "Participates enthusiatically in beef and blowjob",
     "Is best-friends with their ex",
     "Will only eat their dinner while watching Asian mukbangers",
     "Believes they were actually born to be a different race",
@@ -56,7 +55,6 @@ export const sampleTraits2 = {
     "Collects moths and other dead critters",
     "Addicted to Duolingo",
     "Obsessed with river dancing",
-    "Is into primal play",
     "Goes clubbing every weekend",
     "Likes going to reneissance fairs",
   ],

@@ -49,3 +49,27 @@
     padding-top: 68px;
   }
 }
+
+.rulesButton {
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  bottom: 0;
+  left: 20px;
+  font-size: 1.5rem;
+  border: 2px solid rgb(190 58 102);
+  background-color: rgb(255 232 232);
+  color: rgb(190 58 102);
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(225, 165, 165);
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(204 79 100);
+  }
+}
