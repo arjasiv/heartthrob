@@ -2,6 +2,8 @@ import { Outlet } from "react-router";
 import styles from "./layout.module.css";
 import { useState } from "react";
 import RulesModal from "@component/RulesModal/RulesModal";
+// @ts-ignore - sounds.js doesn't have type definitions
+import { woodClick } from "~/utils/sounds";
 
 export default function Layout() {
   const [showRules, setShowRules] = useState(false);
@@ -17,6 +19,7 @@ export default function Layout() {
           className={styles.rulesButton}
           type="button"
           onClick={() => {
+            woodClick();
             setShowRules(true);
           }}
         >

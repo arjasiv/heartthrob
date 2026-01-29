@@ -1,4 +1,6 @@
 import styles from "./RulesModal.module.css";
+// @ts-ignore - sounds.js doesn't have type definitions
+import { woodClick } from "~/utils/sounds";
 
 type RulesModalProps = {
   onClick: () => void;
@@ -8,7 +10,13 @@ const RulesModal = ({ onClick }: RulesModalProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.modal}>
-        <button className={styles.closeBtn} onClick={onClick}>
+        <button
+          className={styles.closeBtn}
+          onClick={() => {
+            woodClick();
+            onClick();
+          }}
+        >
           x
         </button>
         A party game to play with friends based on the 90s board game
