@@ -8,7 +8,8 @@ type RulesModalProps = {
 
 const RulesModal = ({ onClick }: RulesModalProps) => {
   return (
-    <div className={styles.container}>
+    <>
+      <button onClick={onClick} className={styles.container}></button>
       <div className={styles.modal}>
         <button
           className={styles.closeBtn}
@@ -40,7 +41,7 @@ const RulesModal = ({ onClick }: RulesModalProps) => {
         <br /> Drinking game version:
         <br /> Player takes a shot for each incorrect guess.
       </div>
-    </div>
+    </>
   );
 };
 
