@@ -19,7 +19,7 @@
 }
 .modal {
   color: rgb(190 58 102);
-  padding: 38px;
+  padding: 42px;
   background-color: #ffd1d1;
   border: 3px dashed rgb(190 58 102);
   position: absolute;
@@ -27,7 +27,6 @@
   left: calc(100vw / 2 - 300px);
   z-index: 3;
   width: 600px;
-  height: 600px;
   font-size: 18px;
 }
 
