@@ -1,20 +1,25 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import { useDropzone } from "react-dropzone";
 // @ts-ignore - sounds.js doesn't have type definitions
 import { dropSound } from "~/utils/sounds";
 
 function ImageUpload({ previewProp }: { previewProp?: string | null }) {
   const [preview, setPreview] = useState<string | null>(previewProp || null);
-
-  console.log("Current Preview:", previewProp);
+  const hiddenInputRef = useRef<HTMLInputElement | null>(null);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
+    if (hiddenInputRef.current) {
+      const dataTransfer = new DataTransfer();
+      acceptedFiles.forEach((v) => {
+        dataTransfer.items.add(v);
+      });
+      hiddenInputRef.current.files = dataTransfer.files;
+    }
     if (acceptedFiles.length > 0) {
       dropSound();
       const file = acceptedFiles[0];
       const url = URL.createObjectURL(file);
       setPreview(url);
-      console.log(url);
     }
   }, []);
 
@@ -51,7 +56,17 @@ function ImageUpload({ previewProp }: { previewProp?: string | null }) {
         overflow: "hidden",
       }}
     >
-      <input {...getInputProps()} name="pic" />
+      <input
+        type="file"
+        name={"pic"}
+        required={false}
+        style={{
+          position: "absolute",
+          opacity: 0,
+        }}
+        ref={hiddenInputRef}
+      />
+      <input {...getInputProps()} />
 
       {preview ? (
         <img
@@ -69,7 +84,7 @@ function ImageUpload({ previewProp }: { previewProp?: string | null }) {
       ) : isDragActive ? (
         <p>Drop the image here...</p>
       ) : (
-        <p>Click to add an image</p>
+        <p>Drag 'n' drop an image here, or click to select</p>
       )}
     </div>
   );

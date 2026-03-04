@@ -16,7 +16,7 @@ type ProfileProps = {
 const ProfilesForm = ({ round, name }: ProfileProps) => {
   const { profiles, setProfiles } = useProfiles();
   const [numberOfProfiles, setNumberOfProfiles] = useState<number>(
-    profiles?.length || 5
+    profiles?.length || 5,
   );
 
   const navigate = useNavigate();
