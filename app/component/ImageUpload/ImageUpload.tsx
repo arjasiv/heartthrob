@@ -69,7 +69,7 @@ function ImageUpload({ previewProp }: { previewProp?: string | null }) {
       ) : isDragActive ? (
         <p>Drop the image here...</p>
       ) : (
-        <p>Drag 'n' drop an image here, or click to select</p>
+        <p>Click to add an image</p>
       )}
     </div>
   );
