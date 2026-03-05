@@ -24,6 +24,11 @@
   }
 }
 
+.headerLink {
+  color: inherit;
+  text-decoration: none;
+}
+
 .layout {
   max-width: 1500px;
   margin: 0 auto;

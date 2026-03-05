@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import styles from "./layout.module.css";
 import { useState } from "react";
 import RulesModal from "@component/RulesModal/RulesModal";
@@ -11,7 +11,9 @@ export default function Layout() {
   return (
     <>
       <header className={styles.header}>
-        <h1>Heartthrob</h1>
+        <Link to={"/"} className={styles.headerLink} reloadDocument>
+          <h1>Heartthrob</h1>
+        </Link>
       </header>
       {showRules && <RulesModal onClick={() => setShowRules(false)} />}
       <div className={styles.layout} inert={showRules}>
