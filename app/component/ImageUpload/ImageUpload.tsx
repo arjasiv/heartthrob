@@ -2,6 +2,7 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 import { useDropzone } from "react-dropzone";
 // @ts-ignore - sounds.js doesn't have type definitions
 import { dropSound } from "~/utils/sounds";
+import styles from "./ImageUpload.module.css";
 
 function ImageUpload({ previewProp }: { previewProp?: string | null }) {
   const [preview, setPreview] = useState<string | null>(previewProp || null);
@@ -41,22 +42,13 @@ function ImageUpload({ previewProp }: { previewProp?: string | null }) {
   return (
     <div
       {...getRootProps()}
+      className={styles.container}
       style={{
         border: `${!preview ? "2px dashed gray" : "none"}`,
-        padding: 20,
-        aspectRatio: "3/4",
-        width: "100%",
-        maxHeight: "370px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        cursor: "pointer",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       <input
+        tabIndex={-1}
         type="file"
         name={"pic"}
         required={false}

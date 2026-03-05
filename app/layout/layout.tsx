@@ -13,20 +13,20 @@ export default function Layout() {
       <header className={styles.header}>
         <h1>Heartthrob</h1>
       </header>
-      <div className={styles.layout}>
-        {showRules && <RulesModal onClick={() => setShowRules(false)} />}
-        <button
-          className={styles.rulesButton}
-          type="button"
-          onClick={() => {
-            mouseclick();
-            setShowRules(true);
-          }}
-        >
-          ?
-        </button>
+      {showRules && <RulesModal onClick={() => setShowRules(false)} />}
+      <div className={styles.layout} inert={showRules}>
         <Outlet />
       </div>
+      <button
+        className={styles.rulesButton}
+        type="button"
+        onClick={() => {
+          mouseclick();
+          setShowRules(!showRules);
+        }}
+      >
+        ?
+      </button>
     </>
   );
 }

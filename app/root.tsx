@@ -19,7 +19,13 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export function links() {
-  return [{ rel: "icon", href: "/spirit_love_like_valentine_romance_soul_heart_game_icon_262424.ico", type: "image/x-icon" }];
+  return [
+    {
+      rel: "icon",
+      href: "/spirit_love_like_valentine_romance_soul_heart_game_icon_262424.ico",
+      type: "image/x-icon",
+    },
+  ];
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
